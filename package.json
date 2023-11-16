@@ -8,7 +8,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "tsc": "tsc",
-    "start": "ts-node app.ts"
+    "start": "ts-node src/bill-microservice/app.ts"
   },
   "keywords": [],
   "author": "",
