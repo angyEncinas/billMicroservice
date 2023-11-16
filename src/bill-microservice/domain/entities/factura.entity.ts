@@ -1,4 +1,4 @@
 export class Factura {
-    constructor(public userId: string,public nombre: string,public correo: string, public planId: string, public total: number) {}
+    constructor(public userCi: number,public name: string,public lastname: string, public mail: string, public total: number) {}
   }
   

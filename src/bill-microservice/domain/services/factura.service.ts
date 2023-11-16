@@ -10,10 +10,10 @@ export class FacturaService {
     this.userMicroserviceService = userMicroserviceService;
   }
 
-  async crearFactura(userId: string,planId: string): Promise<Factura> {
+  async crearFactura(userCi: number): Promise<Factura> {
     try {
-        const usuarioExterno = await this.userMicroserviceService.obtenerUsuarioPorId(userId);
-        return new Factura(usuarioExterno.id,usuarioExterno.nombre, usuarioExterno.correo, planId, 100);
+        const usuarioExterno = await this.userMicroserviceService.obtenerUsuarioPorId(userCi);
+        return new Factura(usuarioExterno.ci,usuarioExterno.name, usuarioExterno.lastname, usuarioExterno.mail, 100);
 
     } catch (error: any) {
       throw new Error(`Error al crear la factura: ${error.message}`);

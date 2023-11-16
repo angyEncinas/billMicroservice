@@ -5,16 +5,16 @@ const app: Application = express();
 const port = process.env.PORT || 3002;
 
 const usuarios = [
-  { id: '1', nombre: 'Usuario 1', correo: 'usuario1@example.com' },
-  { id: '2', nombre: 'Usuario 2', correo: 'usuario2@example.com' },
+  { name: 'TTTT', lastname: 'Usuario 1', mail: 'usuario1@example.com',ci: 124},
+  { name: 'T55', lastname: 'Usuario 2', mail: 'usuario2@example.com',ci: 1256},
 
 ];
 
 app.use(express.json());
 
-app.get('/usuarios/:id', (req: Request, res: Response) => {
-  const userId = req.params.id;
-  const usuario = usuarios.find((user) => user.id === userId);
+app.get('/usuarios/:ci', (req: Request, res: Response) => {
+  const userCi: number = parseInt(req.params.ci, 10);
+  const usuario = usuarios.find((user) => user.ci === userCi);
 
   if (usuario) {
     res.json(usuario);

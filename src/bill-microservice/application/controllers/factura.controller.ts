@@ -8,10 +8,10 @@ export class FacturaController {
     this.facturaService = facturaService;
   }
 
-  async crearFactura(req: Request, res: Response): Promise<void> {
+  async crearFactura(req: number, res: Response): Promise<void> {
     try {
-      const { userId,usernombre,usercorreo, planId } = req.body;
-      const factura = await this.facturaService.crearFactura(userId,planId);
+      const userCi = req;
+      const factura = await this.facturaService.crearFactura(userCi);
 
       res.status(201).json(factura);
     } catch (error:any) {
