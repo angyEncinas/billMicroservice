@@ -13,8 +13,6 @@ RUN npm install
 # Copia el resto de la aplicación
 COPY . .
 
-# Compila TypeScript
-RUN npm run build
 
 # Expone el puerto en el que se ejecutará la aplicación
 EXPOSE 3001
