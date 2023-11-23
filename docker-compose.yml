@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  microservicio2:
+    image: rodrigoguardia/micro-service-user-image
+    ports:
+      - "3000:3000"
+
+  microservicio3:
+    image: bill-microservice
+    depends_on:
+      - microservicio2
+    networks:
+      - mi-red
+
+networks:
+  mi-red:
+    driver: bridge
+
